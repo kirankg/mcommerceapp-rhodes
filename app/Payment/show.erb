@@ -1,0 +1,67 @@
+<div data-role="page" class="ipadBdy">
+
+<style type="text/css">
+* {
+  margin:0;
+  padding:0;
+ 
+}
+.ipadBdy{
+  background:transparent url(/public/images/bg.png) repeat 0 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  color:#3d3e42;
+}
+</style>
+
+  <div class="pageTitle">
+  <h1><font size="3">Verify Payment</font></h1>
+  </div>
+    
+  <div class="toolbar">
+    <div class="leftItem backButton">
+      <a class="slide" href="<%= url_for :action => :edit, :id => @payment.object %>"style = "color:#FAFAD2"><font size="2" face="verdana" >Edit</font></a>
+    </div>
+    
+    <div class="rightItem blueButton">
+      <a href="<%= url_for  :action => :completePayment, :id => @payment.object %>"style = "color:#FAFAD2"><font size="2" face="verdana" >Submit</font></a>
+    </div>
+  </div>
+
+
+<div class="content">
+    <ul>
+    <li class="ipadBdy">
+      <table width="100%" border="1" cellpadding="0">
+       <tr >
+           <td width="30%"><font size="3"><b>Cardtype</b></font></td>
+            <td width="70%"><font size="3"><%= @payment.cardtype %></font></td>
+         
+      </tr>
+      
+        <tr width="100%">
+            <td width="30%"><font size="3"><b>Cardnumber</b></font></td>
+            <td width="70%"><font size="3"><%= @payment.cardnumber %></font></td>
+                  
+        </tr>  
+                
+        <tr width="100%">
+                        <td width="30%"><font size="3"><b>Cardexp Month</b></font></td>
+                        <td width="70%"><font size="3"><%= @payment.cardexpmonth %></font></td>
+                    
+        </tr> 
+            
+        <tr width="100%">
+                          <td width="30%"><font size="3"><b>Cardexp Year<b/></font></td>
+                          <td width="70%"><font size="3"><%= @payment.cardexpyear %></font></td>
+                     
+        </tr>
+              
+            
+      </table>
+      </li>  
+  
+    </ul>
+  </div>
+  
+</div>

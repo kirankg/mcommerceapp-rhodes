@@ -1,0 +1,91 @@
+<div data-role="page" class="ipadBdy">
+
+<style type="text/css">
+* {
+  margin:0;
+  padding:0;
+ 
+}
+.ipadBdy{
+  background:transparent url(/public/images/bg.png) repeat 0 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  color:#3d3e42;
+}
+  header,section,article,figure {
+    display:block;
+  }
+  header {
+    padding:26px 0 18px 0;
+  }
+  header figure {
+    width:270px;
+    margin:0 auto;
+  }
+  </style>
+  
+  <div class="pageTitle">
+     <h1><%= $details[0]['productname'] %></h1>
+   </div>
+       
+    <div class="toolbar">
+       <div class="leftItem backButton">
+         <a class="slide" href="<%= url_for :controller=>:Products %>" style = "color:#FAFAD2"><font size="2" face="verdana" >Back</font></a>
+       </div>
+    </div>
+
+<div class="content">
+   
+     
+       <table>
+         <tr>
+           <td ><img src=<%= $image %> height="60%" width="60%" ></img></td>
+           <td>
+         </tr>
+         <tr>
+             <table>
+               <tr>
+                 <td >
+                   <label for="productname">Product Name:&nbsp; &nbsp;  </label>
+                   <b><label for="label1"><%= $details[0]['productname'] %></label></b>
+                 </td>
+               </tr>
+               <tr>
+                 <td >
+                   <label for="productname">Product Details: &nbsp; &nbsp</label>
+                   <b><label for="label1"><%= $details[0]['productdescription'] %></label></b>
+                 </td>
+               </tr>
+               <tr>
+                 <td >
+                   <label for="productname">Product Price: &nbsp; &nbsp; </label>
+                   <b><label for="label1"><%= $details[0]['productprice'] %></label></b>
+                 </td>
+               </tr>
+             </table>
+           </td>
+         </tr>
+       </table>
+  <% if $video != "http://10.10.222.73:8080/JsonMobile/videos/" %>  
+  
+        <% if System::get_property('platform') == 'APPLE' %>  
+            <video width="70%" height="50%" controls="controls">
+               
+               <source src=<%= $video %> type="video/mp4" />
+               
+              <object width="70%" height="50%">
+              <embed width="70%" height="50%">
+              Your browser does not support video
+              </embed>
+              </object>
+              </video> 
+        <% else %>     
+              <br><br> 
+              <a href="<%= $video %>"><%= $details[0]["productvideo"] %></a>       
+        <% end %>       
+ <% end %>
+ </div>
+ 
+
+
+</div>

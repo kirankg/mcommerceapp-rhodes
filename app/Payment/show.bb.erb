@@ -1,0 +1,45 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @payment.cardtype %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @payment.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">Cardtype</td>
+        <td class="itemValue"><%= @payment.cardtype%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Cardnumber</td>
+        <td class="itemValue"><%= @payment.cardnumber%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Cardexpmonth</td>
+        <td class="itemValue"><%= @payment.cardexpmonth%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Cardexpyear</td>
+        <td class="itemValue"><%= @payment.cardexpyear%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Cardpin</td>
+        <td class="itemValue"><%= @payment.cardpin%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Cardname</td>
+        <td class="itemValue"><%= @payment.cardname%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

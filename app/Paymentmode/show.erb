@@ -1,0 +1,31 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @paymentmode.card %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse"><font size="2" face="verdana" >
+      Back</font>
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @paymentmode.object %>" class="ui-btn-right" data-icon="star"><font size="2" face="verdana" >
+      Edit
+    </font></a>
+  </div>
+
+  <div data-role="content">
+
+      <table>
+          <tr>
+              <td width="40"><input type="radio" name="PaymentMode" /></td>
+              <td><label for="creditcard"><%= @paymentmode.card %></label></td>
+          </tr>
+          <tr>
+              <td width="40"><input type="radio" name="PaymentMode" /></td>  
+              <td><label for="checkingaccount"><%= @paymentmode.card %></label></td></td>
+          </tr>
+          <tr>
+              <td width="40"><input type="radio" name="PaymentMode" /></td>
+              <td><label for="atm"><%= @paymentmode.card %></label></td>
+          </tr>
+      </table>
+  </div>
+
+</div>

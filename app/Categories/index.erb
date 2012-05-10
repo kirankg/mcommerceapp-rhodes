@@ -1,0 +1,39 @@
+<div data-role="page" class="ipadBdy">
+
+<style type="text/css">
+* {
+  margin:0;
+  padding:0;
+ 
+}
+.ipadBdy{
+  background:transparent url(/public/images/bg.png) repeat 0 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  color:#3d3e42;
+}
+</style>
+
+<div class="pageTitle">
+  <h1><font size="3">Categories</font></h1>
+</div>
+<div class="toolbar" style="background-color:red;width=100%">
+ <div class="leftItem blueButton" >
+    <a href="<%= url_for :controller => :Settings, :action => :back_home %>"style = "color:#FAFAD2"><font size="2" face="verdana">Home</font></a>
+  </div> 
+
+</div>
+
+ 
+
+<div class="content">
+<ul data-role="listview">
+    <% @categorieses.each do |categories| %>
+      <li>
+      <a class="dissolve" href= "<%= url_for :action => :showProducts,:id => categories.categoryname %>" ><%= categories.categoryname %></a>
+      </li>
+      
+    <% end %>
+    </ul>
+</div>
+</div>

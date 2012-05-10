@@ -1,0 +1,75 @@
+<div data-role="page" class="ipadBdy"> 
+
+<style type="text/css">
+* {
+  margin:0;
+  padding:0;
+ 
+}
+.ipadBdy{
+  background:transparent url(/public/images/bg.png) repeat 0 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  color:#3d3e42;
+}
+  header,section,article,figure {
+    display:block;
+  }
+  header {
+    padding:26px 0 18px 0;
+  }
+  header figure {
+    width:270px;
+    margin:0 auto;
+  }
+  </style>
+       
+             <div class="pageTitle">
+               <h1><font size="3">Account Login</font></h1>
+             </div>
+             
+            <div class="toolbar" data-icon="star">
+            
+              <div class="rightItem blueButton" >
+                 <a href="<%= url_for :controller => :Settings, :action => :offline %>"style = "color:#FAFAD2"><font size="2" face="verdana">Offline</font></a>
+               </div> 
+               
+             </div>
+             
+             <div class="content">
+             <form method="POST" action="<%= url_for :controller => :Settings, :action => :postAsynchttp %>">
+              
+             
+                  <div data-role="fieldcontain">
+             <label for="login" class="itemLabel"><b>EmailID&nbsp;<font color="red">*</font></b></label>
+                    <input type="text" id="login" name="login" class="itemValue" />
+                  </div>
+                  <div data-role="fieldcontain">
+                    <label for="password"><b>Password&nbsp;<font color="red">*</font></b></label>
+                    <input type="password" id="password" name="password" class="itemValue" />
+                  </div>
+                  <table>
+                  <tr>
+                  <td style="width:180px">
+                  <b>New User:</b>&nbsp;&nbsp<a href="<%= url_for :controller => :Registration, :action => :checkavailability %>">Sign Up</a>
+                  </td>
+                  <td style="width:60px">
+                  <input type="submit" style="width:100%;height:100%" value="Login"/>
+                  </td>
+                 
+                  </tr>
+                  <tr>
+                  <td style="width:180px">
+                  </td>
+                  <td style="width:60px">
+                      
+                      </td>
+                      </tr>
+                                       </table>
+                </form>
+                
+                      
+              </div>
+             
+             </div>
+</div>

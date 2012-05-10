@@ -1,0 +1,89 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :show, :id => @registration.object %>
+    <h1>Edit <%= @registration.firstname%></h1>
+    <%= link_to "Delete", :action => :delete, :id => @registration.object %>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @registration.object %>"/>
+      <table>
+          
+          <tr>
+              <td class="itemLabel">Firstname: </td>
+              <td class="itemValue"><input type="text" name="registration[firstname]" value="<%= @registration.firstname %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Lastname: </td>
+              <td class="itemValue"><input type="text" name="registration[lastname]" value="<%= @registration.lastname %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Emailid: </td>
+              <td class="itemValue"><input type="text" name="registration[emailid]" value="<%= @registration.emailid %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Confirmemailid: </td>
+              <td class="itemValue"><input type="text" name="registration[confirmemailid]" value="<%= @registration.confirmemailid %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Companyname: </td>
+              <td class="itemValue"><input type="text" name="registration[companyname]" value="<%= @registration.companyname %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Address1: </td>
+              <td class="itemValue"><input type="text" name="registration[address1]" value="<%= @registration.address1 %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Address2: </td>
+              <td class="itemValue"><input type="text" name="registration[address2]" value="<%= @registration.address2 %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Password: </td>
+              <td class="itemValue"><input type="text" name="registration[password]" value="<%= @registration.password %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Confirmpassword: </td>
+              <td class="itemValue"><input type="text" name="registration[confirmpassword]" value="<%= @registration.confirmpassword %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">City: </td>
+              <td class="itemValue"><input type="text" name="registration[city]" value="<%= @registration.city %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">State: </td>
+              <td class="itemValue"><input type="text" name="registration[state]" value="<%= @registration.state %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Country: </td>
+              <td class="itemValue"><input type="text" name="registration[country]" value="<%= @registration.country %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Zipcode: </td>
+              <td class="itemValue"><input type="text" name="registration[zipcode]" value="<%= @registration.zipcode %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Phonenumber: </td>
+              <td class="itemValue"><input type="text" name="registration[phonenumber]" value="<%= @registration.phonenumber %>"/></td>
+          </tr>
+          
+      </table>
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,28 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @terms.terms %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse" style = "color:#FAFAD2">
+      <font size="2" face="verdana">Back</font>
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @terms.object %>" class="ui-btn-right" data-icon="star" style = "color:#FAFAD2">
+      <font size="2" face="verdana">Edit</font>
+    </a>
+  </div>
+
+      <div class="content">
+      
+      <ul>
+         <% for i in 0..($products.length - 2)  %>
+           <li>
+      <a href="<%= url_for :action => :show, :id=> $products[i.to_s] %>">
+           <span class="title"><%= $products[i.to_s] %></span><span class="disclosure_indicator"></span>
+           </a>
+      
+           
+           </li>
+         <% end %>
+        </ul>
+        
+      </div>
+</div>

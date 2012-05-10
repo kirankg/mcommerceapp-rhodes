@@ -1,0 +1,91 @@
+<<div data-role="page">
+
+<div class="pageTitle">
+    <h1>Registration Details</h1>
+ </div>
+<div class="toolbar">
+   <div class="leftItem blueButton">
+       <a class="slide" href="<%= url_for :action => :newpage %>"style = "color:#FAFAD2"><font size="2" face="verdana" >cancel</font></a>
+    </div>
+</div>
+  <div class="content">
+    <form method="POST" action="<%= url_for :action => :apply %>">
+     
+
+      
+          <div data-role="fieldcontain">
+            <label for="registration[firstname]" class="fieldLabel"><font size="2"><b>First Name</b></font><font size="2" color="red">*</font> </label>
+            <input type="text" value= <%=$var1%> id="registration[firstname]" name="registration[firstname]" <%= placeholder("Firstname") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="registration[lastname]" class="fieldLabel"><font size="2"><b>Last Name</b></font><font size="2" color="red">*</font> </label>
+            <input type="text" value= <%=$var2%> id="registration[lastname]" name="registration[lastname]" <%= placeholder("Lastname") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="registration[emailid]" class="fieldLabel"><font size="2"><b>Email Id</b></font><font size="2" color="red">*</font> </label>
+            <input type="text" value= <%=$emailid%> id="registration[emailid]" name="registration[emailid]" <%= placeholder("Emailid") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="registration[confirmemailid]" class="fieldLabel"><font size="2"><b>Confirm Email Id</b></font><font size="2" color="red">*</font> </label>
+            <input type="text" id="registration[confirmemailid]" name="registration[confirmemailid]" <%= placeholder("Confirmemailid") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="registration[companyname]" class="fieldLabel"><font size="2"><b>Company Name</b></font> </label>
+            <input type="text" id="registration[companyname]" name="registration[companyname]" <%= placeholder("Companyname") %> />
+          </div>
+          
+          <div data-role="fieldcontain">
+             <label for="registration[password]" class="fieldLabel"><font size="2"><b>Password</b></font><font size="2" color="red">*</font> </label>
+             <input type="text" id="registration[password]" name="registration[password]" <%= placeholder("Password") %> />
+         </div>
+              
+          <div data-role="fieldcontain">
+             <label for="registration[confirmpassword]" class="fieldLabel"><font size="2"><b>Confirm Password</b></font><font size="2" color="red">*</font> </label>
+             <input type="text" id="registration[confirmpassword]" name="registration[confirmpassword]" <%= placeholder("Confirmpassword") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="registration[address1]" class="fieldLabel"><font size="2"><b>Address1</b></font><font size="2" color="red">*</font> </label>
+            <input type="text" id="registration[address1]" name="registration[address1]" <%= placeholder("Address1") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="registration[address2]" class="fieldLabel"><font size="2"><b>Address2</b></font><font size="2" color="red">*</font> </label>
+            <input type="text" id="registration[address2]" name="registration[address2]" <%= placeholder("Address2") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="registration[city]" class="fieldLabel"><font size="2"><b>City</b></font><font size="2" color="red">*</font> </label>
+            <input type="text" id="registration[city]" name="registration[city]" <%= placeholder("City") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="registration[state]" class="fieldLabel"><font size="2"><b>State</b></font><font size="2" color="red">*</font> </label>
+            <input type="text" id="registration[state]" name="registration[state]" <%= placeholder("State") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="registration[country]" class="fieldLabel"><font size="2"><b>Country</b></font><font size="2" color="red">*</font> </label>
+            <input type="text" id="registration[country]" name="registration[country]" <%= placeholder("Country") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="registration[zipcode]" class="fieldLabel"><font size="2"><b>Zipcode</b></font><font size="2" color="red">*</font> </label>
+            <input type="text" maxlength ="6" id="registration[zipcode]" name="registration[zipcode]" <%= placeholder("Zipcode") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="registration[phonenumber]" class="fieldLabel"><font size="2"><b>Phone Number</b></font><font size="2" color="red">*</font> </label>
+            <input type="text" maxlength ="10" id="registration[phonenumber]" name="registration[phonenumber]" <%= placeholder("Phonenumber") %> />
+          </div>
+      
+
+      <input type="submit" value="Submit"/>
+    </form>
+  </div>
+
+</div>

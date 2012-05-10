@@ -1,0 +1,73 @@
+<div data-role="page" class="ipadBdy">
+
+<style type="text/css">
+* {
+  margin:0;
+  padding:0;
+ 
+}
+.ipadBdy{
+  background:transparent url(/public/images/bg.png) repeat 0 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  color:#3d3e42;
+}
+</style>
+
+  <div class="pageTitle">
+  <h1><font size="2">Shipping Address</font></h1>
+  </div>
+    
+  <div class="toolbar">
+    <div class="leftItem backButton">
+      <a class="slide" href="<%= url_for :action => :choice %>" style = "color:#FAFAD2"><font size="2" face="verdana">Back</font></a>
+    </div>
+  </div>
+
+
+<div class="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @shippingaddress.object %>"/>
+
+
+              <div data-role="fieldcontain">
+                 <label for="shippingaddress[name]" class="fieldLabel"><font size="2.7"><b>Name</b></font><font color="red">*</font></label>
+                 <input type="text"  value=<%= $userDetails['firstname'] %> id="shippingaddress[name]" name="shippingaddress[name]" <%= placeholder("Name") %> />
+               </div>
+           
+               <div data-role="fieldcontain">
+                 <label for="shippingaddress[apartment]" class="fieldLabel"><font size="2.7"><b>Apartment</b></font><font color="red">*</font></label>
+                 <input type="text" value=<%= $userDetails['address1'] %> id="shippingaddress[apartment]" name="shippingaddress[apartment]" <%= placeholder("Apartment") %> />
+               </div>
+           
+               <div data-role="fieldcontain">
+                 <label for="shippingaddress[street]" class="fieldLabel"><font size="2.7"><b>Street</b></font><font color="red">*</font></label>
+                 <input type="text" value=<%= $userDetails['address2'] %> id="shippingaddress[street]" name="shippingaddress[street]" <%= placeholder("Street") %> />
+               </div>
+           
+               <div data-role="fieldcontain">
+                 <label for="shippingaddress[city]" class="fieldLabel"><font size="2.7"><b>City</b></font><font color="red">*</font></label>
+                 <input type="text" value=<%= $userDetails['city'] %> id="shippingaddress[city]" name="shippingaddress[city]" <%= placeholder("City") %> />
+               </div>
+           
+               <div data-role="fieldcontain">
+                 <label for="shippingaddress[zipcode]" class="fieldLabel"><font size="2.7"><b>Zipcode</b></font><font color="red">*</font></label>
+                 <input type="text" value=<%= $userDetails['zip'] %> maxlength="6" id="shippingaddress[zipcode]" name="shippingaddress[zipcode]" <%= placeholder("Zipcode") %> />
+               </div>
+           
+               <div data-role="fieldcontain">
+                 <label for="shippingaddress[phone]" class="fieldLabel"><font size="2.7"><b>Phone</b></font><font color="red">*</font></label>
+                 <input type="text" value=<%= $userDetails['phonenumber'] %> maxlength="10" id="shippingaddress[phone]" name="shippingaddress[phone]" <%= placeholder("Phone") %> />
+               </div>
+
+              <table>
+                                     <tr>
+                                     <td style="width:280px;">
+                                  <input type="submit" style="width:100%;height:100%" value="Submit"/>
+                                  </td>
+                                  </tr>
+                                  </table>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,38 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1>New Products</h1>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @products.object %>"/>
+      <table>
+          
+            <tr>
+                <td class="itemLabel">Productname: </td>
+                <td class="itemValue"><input type="text" name="products[productname]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Productid: </td>
+                <td class="itemValue"><input type="text" name="products[productid]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Productprice: </td>
+                <td class="itemValue"><input type="text" name="products[productprice]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Categoryid: </td>
+                <td class="itemValue"><input type="text" name="products[categoryid]"/></td>
+            </tr>
+          
+      </table>
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

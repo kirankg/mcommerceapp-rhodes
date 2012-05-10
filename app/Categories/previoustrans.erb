@@ -1,0 +1,33 @@
+<div data-role="page">
+ <div class="pageTitle">
+ <h1> Previous Transaction</h1>
+</div>
+
+<div class="toolbar">
+<div class="leftItem backButton">
+<a class="slide" href="<%= url_for :action => :back_to_index %>"><font size="2" face="verdana" >Back</font></a>
+</div>
+</div>
+ 
+<div class="content">
+<ul>
+<table cellpadding="20" border="1">
+<tr>
+<th>TransactionID</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+
+
+ <% (0.. ($data.length - 1)).each do |i|  %>
+   <tr>
+  <td><a href="<%= url_for :action => :viewCart %>">1234567890</a> </td>
+  <td> 20-04-1990 </td>
+  <td> Delivered </td>
+   </tr>
+ <% end %>
+ 
+
+</ul>
+
+</div> 

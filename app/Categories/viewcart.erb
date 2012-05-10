@@ -1,0 +1,50 @@
+<div data-role="page">
+      <div class="pageTitle">
+      <h1>Products</h1>
+      </div>
+        
+      <div class="toolbar">
+        <div class="leftItem backButton">
+          <a class="slide" href="<%= url_for :action => :showProducts,:id=>$category_id %>"style = "color:#FAFAD2"><font size="2" face="verdana">Back</font></a>
+        </div>
+        <div class="rightItem blueButton" >
+         <a href="<%= url_for :controller => :Shippingaddress, :action => :choice %>"style = "color:#FAFAD2"><font size="2" face="verdana">Check Out</font></a>
+       </div>
+
+      </div>
+      
+      <div class="content">
+      
+<ul>
+   <% (0.. ($cart.length - 1)).each do |i|  %>
+     
+     <li>
+        <form method="POST" action="<%= url_for :action => :delete_from_cart, :id=> $cart[i] %>">
+                    <table>
+                          <tr>
+                            <td height="10px" width="70%">
+                              <font size="1"><span class="title"><%= $cart[i] %></span></font>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td height="10px" width="70%">
+                                <label for="login" class="itemLabel"><%= "Quantity: "+$productsCodeNameQuantity[$cart[i]]%></label>
+                            </td>
+                            <td height="10px" width="30%">       
+                               <font size="1"> <input type="submit" value="Delete"/> </font>                       
+                            </td>
+                            </tr>
+                            <tr>
+                            <td height="10px" width="70%">
+                                <label for="login" class="itemLabel"><%= "Totoal Price: "+($productsCodeNameQuantity[$cart[i]].to_i * $productsCodeNamePrice[$cart[i]].to_i).to_s+""%></label>
+                            </td>
+                          </tr>    
+                     </table>   
+          </form>
+    </li>
+
+   <% end %>
+  </ul>
+        
+      </div>
+</div>

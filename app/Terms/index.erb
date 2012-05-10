@@ -1,0 +1,42 @@
+<div data-role="page" class="ipadBdy">
+
+<style type="text/css">
+* {
+  margin:0;
+  padding:0;
+ 
+}
+.ipadBdy{
+  background:transparent url(/public/images/bg.png) repeat 0 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  color:#3d3e42;
+}
+  header,section,article,figure {
+    display:block;
+  }
+  header {
+    padding:26px 0 18px 0;
+  }
+  header figure {
+    width:270px;
+    margin:0 auto;
+  }
+  </style>
+
+<div class="pageTitle">
+  <h1><font size="2">Terms & Conditions</font></h1>
+</div>
+<div class="toolbar">
+    <div class="leftItem backButton">
+      <a href="<%= url_for :controller => :Shippingaddress, :action => :choice %>"style = "color:#FAFAD2"><font size="2" face="verdana">Deny</font></a>
+    </div>
+    <div class="rightItem blueButton">
+      <a href="<%= url_for :controller => :Paymentmode, :action => :index %>"style = "color:#FAFAD2"><font size="2" face="verdana">Accept</font></a>
+      </div> 
+ </div>
+
+  <div class="content">
+    <p  style="text-align:left;padding-left:15px;padding-right:10px"><font size="4">These Terms and Conditions govern your use of this mobile payment system. Your use of this service, and that of any other person you authorize to use this service on your behalf, constitutes your agreement to your Terms and Conditions. Privacy policy : You agree to disclosure of your personal information in accordance with the statement to payees.</font></p>
+  </div>
+  </div>

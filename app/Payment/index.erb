@@ -1,0 +1,34 @@
+<div data-role="page">
+
+  <div class="pageTitle">
+    <h1>Enter Credit Card Details</h1>
+  </div>
+  <div class="toolbar">
+    <div class="leftItem backButton">
+      <a class="slide" href="<%= url_for :action => :back_paymentmode %>"style = "color:#FAFAD2"><font size="2" face="verdana" >Back</font></a>
+    </div>
+    <div class="rightItem blueButton">
+      <a class="slide" href="<%= url_for :controller => :Payment, :action => :index %>"style = "color:#FAFAD2"><font size="2" face="verdana" >Continue</font></a>
+    </div> 
+  </div>
+
+  <div data-role="content">
+  
+    <ul data-role="listview">
+      <% @payments.each do |payment| %>
+      
+          <li>
+            <a href="<%= url_for :action => :show, :id => payment.object %>">
+              <%= payment.cardtype %></a>
+          </li>
+     
+      <% end %>
+      <li>
+            payment.cardtype 
+      </li>
+    </ul>
+  </div>
+
+             
+
+</div>

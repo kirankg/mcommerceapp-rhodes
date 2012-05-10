@@ -1,0 +1,126 @@
+<div data-role="page">
+      <div class="pageTitle">
+      <h1><%= $titleForProducts %></h1>
+      </div>
+        
+      <div class="toolbar">
+       
+          <div class="leftItem backButton">
+            <a class="slide" href="<%= url_for :action => :back_to_index %>"style = "color:#FAFAD2"><font size="2" face="verdana" >Back</font></a>
+          </div>
+       
+              
+        <div class="rightItem blueButton" >
+          <a href="<%= url_for :action => :viewCart %>" style = "color:#FAFAD2"><font size="2" face="verdana" >View Cart</font></a>
+        </div>
+      </div>
+      
+      <div class="content">
+      
+<ul>
+   <% (0.. ($products.length - 1)).each do |i| %>
+<% if((i%2)==0) %>
+     <li style="height:130px;background-color:#F5DEB3">
+
+        <form method="POST" action="<%= url_for :action => :add_to_cart, :id=> $products[i]["productname"] %>">
+
+                    <table>
+                        <tr>
+                          <td style="height:10px;width:100px">
+                              <a href="<%= url_for :action => :productDetails, :id=> $products[i]["productcode"] %>"style="color:#000000">
+                              <font size="3"><span style="width:120px"><%= $products[i]["productname"] %></span></font>
+                              </a>
+                          </td>
+                          <td>
+                            <% if $products[i]["productstatus"] == "instock" %>     
+                            <td style="width:100px; height:5px;" >       
+                             <font  size="1"> <input type="submit" style="width:100%;height:100%;background-color:#00008B" value="Add to Cart"/> </font>                       
+                          </td>
+                          <% else %>
+                             <td>
+                             <font color="red" size="2"><b><label for="add_to_cart">Out of stock</label></b></font>
+                             </td>
+                          <% end %>
+                          
+                        </tr>
+                        
+                        <tr>
+                          <td style="height:7px">
+                              <a href="<%= url_for :action => :productDetails, :id=> $products[i]["productcode"] %>"style="color:#000000">
+                             <font size="2"> <span><%= "Price:&nbsp;&nbsp;"+$products[i]["productprice"] %></span></font>
+                              </a>
+                          </td>
+                          
+                             <% if $products[i]["productstatus"] == "instock" %> 
+                          
+                               <td style="height:7px;width:30px">
+                                 <a href="<%= url_for :action => :productDetails, :id=> $products[i]["productcode"] %>"style="color:#000000">
+                                  <font size="2"><label for="login" class="itemLabel" style="width:30px">   Quantity: </label></font>
+                               </td>
+                              <td style="height:7px;width:30px">
+                              <input type="text" style="height:20px;width:40px" size="4" maxlength="3" border="1" id="quantity" name="quantity" <%= placeholder("1") %>/>
+                          </td>
+                              <% end %>
+                              </tr>
+                            
+                        
+                     </table>
+                          
+        </form>
+    </li>
+<% else %>
+<li style="height:130px;background-color:#F5DEB3">
+
+    <form method="POST" action="<%= url_for :action => :add_to_cart, :id=> $products[i]["productname"] %>">
+
+                <table >
+                    <tr>
+                      <td style="height:10px;width:100px">
+                          <a href="<%= url_for :action => :productDetails, :id=> $products[i]["productcode"] %>"style="color:#000000">
+                          <font size="3"><span style="width:120px"><%= $products[i]["productname"] %></span></font>
+                          </a>
+                      </td>
+                      <td>
+                        <% if $products[i]["productstatus"] == "instock" %>     
+                        <td style="width:100px; height:5px;" >       
+                         <font size="1"> <input type="submit" style="width:100%;height:100%;background-color:#00008B" value="Add to Cart"/> </font>                       
+                      </td>
+                      <% else %>
+                         <td>
+                         <font color="red" size="2"><b><label for="add_to_cart">Out of stock</label></b></font>
+                         </td>
+                      <% end %>
+                      
+                    </tr>
+                    
+                    <tr>
+                      <td style="height:7px">
+                          <a href="<%= url_for :action => :productDetails, :id=> $products[i]["productcode"] %>"style="color:#000000">
+                         <font size="2"> <span><%= "Price:&nbsp;&nbsp;"+$products[i]["productprice"] %></span></font>
+                          </a>
+                      </td>
+                      
+                         <% if $products[i]["productstatus"] == "instock" %> 
+                      
+                           <td style="height:7px;width:30px">
+                             <a href="<%= url_for :action => :productDetails, :id=> $products[i]["productcode"] %>"style="color:#000000">
+                              <font size="2"><label for="login" class="itemLabel" style="width:30px">   Quantity: </label></font>
+                           </td>
+                          <td style="height:7px;width:30px">
+                          <input type="text" style="height:20px;width:40px" size="4" maxlength="3" border="1" id="quantity" name="quantity" <%= placeholder("1") %>/>
+                      </td>
+                          <% end %>
+                          </tr>
+                        
+                    
+                 </table>
+                      
+    </form>
+</li>
+
+<% end %>
+   <% end %>
+  </ul>
+        
+      </div>
+</div>

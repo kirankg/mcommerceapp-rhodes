@@ -1,0 +1,42 @@
+<div data-role="page">
+  <div class="pageTitle">
+    <h1> Product Details</h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a class="slide" href="<%= url_for  :action => :filetest %>"style = "color:#FAFAD2"><font size="2" face="verdana" >Back</font></a>
+  </div>
+</div>
+
+<div class="content">
+  <ul>
+    <table cellpadding="20" height="100%" width="100%">
+      <tr style = "background-color:#F4A460">
+        <th><font size="4">Product Name </font></th>
+        <th><font size="4">Quantity </font></th>
+        <th><font size="4">Total Price </font></th>
+      </tr> 
+  
+<% (0.. ($productlist1.length - 1)).each do |i|  %>
+   <tbody align="center">
+    <tr style = "background-color:#F5DEB3">
+   
+      <td>
+        <b><span style="width:100%"><label for="label1"><%= $productlist1[i]['product_name'] %></label></span></b>
+      </td>
+      
+      <td> 
+        <b><span style="width:100%"><label for="label1"><%=$productlist1[i]['quantity'] %></label></span></b>
+      </td>
+
+      <td> 
+        <b><span style="width:100%"><label for="label1"><%= $productlist1[i]['total_price'] %></label></span></b>
+      </td>
+
+     </tr >
+    </tbody>
+<% end %>
+    </table>
+    </ul>  
+</div>

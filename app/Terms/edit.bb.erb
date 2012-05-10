@@ -1,0 +1,24 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :show, :id => @terms.object %>
+    <h1>Edit <%= @terms.terms%></h1>
+    <%= link_to "Delete", :action => :delete, :id => @terms.object %>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @terms.object %>"/>
+      <table>
+          
+          <tr>
+              <td class="itemLabel">Terms: </td>
+              <td class="itemValue"><input type="text" name="terms[terms]" value="<%= @terms.terms %>"/></td>
+          </tr>
+          
+      </table>
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

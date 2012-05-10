@@ -1,0 +1,132 @@
+<div data-role="page" class="ipadBdy">        
+    
+<style type="text/css">
+* {
+  margin:0;
+  padding:0;
+ 
+}
+.ipadBdy{
+  background:transparent url(/public/images/bg.png) repeat 0 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  color:#3d3e42;
+}
+  header,section,article,figure {
+    display:block;
+  }
+  header {
+    padding:26px 0 18px 0;
+  }
+  header figure {
+    width:270px;
+    margin:0 auto;
+  }
+  header figure figcaption {
+    text-align:right;
+  }
+  header figure figcaption a {
+    color:#3d3e42;
+    text-decoration:underline;
+  }
+  .mnSct {
+    margin-top:10px;
+  }
+  .mnSct .sct {
+   /* background-color:#fff;*/
+    padding:14px;
+    margin-bottom:0;
+  }
+  .mnSct .sct h3 {
+    font-size:20px;
+    padding-bottom:15px;
+    padding-left:11px;
+  }
+  .mnSct .subSct {
+   /* border:1px solid #666666;*/
+    font-size:14px;
+    padding:6px;
+  }
+  .list li {
+    line-height:14px;
+    padding:10px 0!important;
+    list-style:none;
+  }
+  .centreAlgn {
+    text-align:center;
+  }
+  h5,h6 {
+    font-size:10px;
+  }
+  .desc {
+    padding-top:10px;
+    line-height:15px;
+    font-size:12px;
+  }
+  .numLi li {
+    padding-bottom:5px;
+    line-height:14px;
+    margin-left:10px;
+  }
+  .wrap {
+    margin:0 10%;
+    text-align:center;
+  }
+  .btnClass {
+      margin:0 5%!important;
+      background:none!important;
+      border:none;
+    list-style-type: none;
+  } 
+  .btnClass li {
+      -moz-border-radius:5px;
+      -webkit-border-radius:5px;
+     background: -moz-linear-gradient(-45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#3b679e), color-stop(50%,#2b88d9), color-stop(51%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */  
+  background: linear-gradient(-45deg, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* W3C */
+    width:100%;
+      text-align:center;
+      line-height:40px;
+      font-size:18px;
+      margin:10px 0!important;
+      border:1px solid #f2f2f2;
+      
+      
+  } 
+  .btnClass li a {
+      text-decoration:none;
+      color:#fff!important;
+  
+  }
+</style>
+
+
+<div class="wrap">
+  <header>
+    <figure> <img src="/public/images/1.png" width="150" height="60" alt="LOGO"   />
+    <figcaption><a href="<%= url_for :action => :login1 %>"><font size="2">Go Online</font></a></figcaption>
+    </figure>
+  </header>
+  
+  <div id="TopMenuNew_1">
+              <ul class="btnClass">
+                 <li><a href="<%= url_for :controller=>:Categories,:action => :offline %>">View Categories<span></span></a></li>
+                 <% if !($offlinecart.empty?) %>
+                  <li><a href="<%= url_for :controller =>:Products, :action => :viewCart %>">View Offline Cart<span></span></a></li>
+                 <% end %>
+                 <li><a href="<%= url_for :controller => :Categories, :action => :previoustrans %>">Previous Transactions<span></span></a></li>
+                 
+              </ul>
+  
+ </div>
+        <br>          
+  <section class="mnSct">
+    <article class="sct">
+      <h3><marquee>Offline Mode</marquee></h3>
+      
+    </article>
+  </section>
+</div>
+
+</div>

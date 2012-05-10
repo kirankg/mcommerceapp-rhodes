@@ -1,0 +1,85 @@
+<div data-role="page">
+  
+      <div class="pageTitle">
+      <h1><%= @categories.name %></h1>
+      </div>
+        
+      <div class="toolbar">
+        <div class="leftItem backButton">
+          <a class="slide" href="<%= url_for :action => :index %>"style = "color:#FAFAD2"><font size="2" face="verdana" >Back</font></a>
+        </div>
+        
+        <div class="rightItem blueButton" >
+          <a href="<%= url_for :controller => :Shippingaddress, :action => :new %>"style = "color:#FAFAD2"><font size="2" face="verdana" >Check Out</font></a>
+        </div>
+      </div>
+
+  <div data-role="content">
+  <%= $productName = @categories.address %>
+  
+<form method="POST" action="<%= url_for :controller => :Categories, :action => :add_to_cart %>">
+                        <td width="80"><img src=<%= @categories.company_id %> width="80px"></img></td>
+                        <td><label for="creditcard"><%= @categories.address %></label></td>
+                         <input type="submit" value="add_to_cart"/>
+                    
+                         
+                     </form>
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">Category</div>
+            <div class="itemValue"><%= @categories.name %></div>
+          </li>
+   
+<li>
+    <table>
+                <tr>
+                    <form method="POST" action="<%= url_for :controller => :Categories, :action => :add_to_cart %>">
+                        <td width="80"><img src=<%= @categories.company_id %> width="80px"></img></td>
+                        <td><label for="creditcard"><%= @categories.address %></label></td>
+                         <input type="submit" value="add_to_cart"/>
+                    
+                         
+                     </form>
+                </tr>
+                
+                <tr>
+                    <form method="POST" action="<%= url_for :action => :add_to_cart, :id => @categories.salary %>">
+                        <td width="80"><img src=<%= @categories.company_id %> width="80px"></img></td>
+                        <td><label for="creditcard"><%= @categories.salary %></label></td>
+                         <td width="20"><input type="button" style="height: 25px; width: 320px" value="Add to Cart"/></td>
+                    
+                         
+                     </form>
+                </tr>
+                
+                <tr>
+                    <form method="POST" action="<%= url_for :action => :add_to_cart, :id => @categories.gender %>">
+                        <td width="80"><img src=<%= @categories.company_id %> width="80px"></img></td>
+                        <td><label for="creditcard"><%= @categories.gender %></label></td>
+                         <td width="20"><input type="button" style="height: 25px; width: 320px" value="Add to Cart"/></td>
+                    
+                         
+                     </form>
+                </tr>
+                
+                <tr>
+                    <form method="POST" action="<%= url_for :action => :add_to_cart, :id => @categories.age %>">
+                        <td width="80"><img src=<%= @categories.company_id %> width="80px"></img></td>
+                        <td><label for="creditcard"><%= @categories.age %></label></td>
+                         <td width="20"><input type="button" style="height: 25px; width: 320px" value="Add to Cart"/></td>
+                    
+                         
+                     </form>
+                </tr>
+
+
+   </table>
+   </li>
+
+      </ul>
+
+      
+  </div>
+
+</div>

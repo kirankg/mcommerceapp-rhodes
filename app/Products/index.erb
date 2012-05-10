@@ -1,0 +1,93 @@
+<div data-role="page" class="ipadBdy">
+
+<style type="text/css">
+* {
+  margin:0;
+  padding:0;
+ 
+}
+.ipadBdy{
+  background:transparent url(/public/images/bg.png) repeat 0 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  color:#3d3e42;
+}
+</style>
+
+<div class="pageTitle">
+    <h1><font size="3">Products</font></h1>
+</div>
+  
+<div class="toolbar">
+         <div class="leftItem backButton">
+            <a class="slide" href="<%= url_for :controller=>:Categories,:action =>:back_to_index %>" style = "color:#FAFAD2"><font size="2" face="verdana" >Back</font></a>
+         </div>
+       
+          <div class="rightItem blueButton" >
+            <a class="slide" href="<%= url_for :controller=>:Categories,:action =>:viewCart %>" style = "color:#FAFAD2"><font size="2" face="verdana" >View Cart</font></a>
+          </div>
+</div>
+
+ <div class="content">
+    <ul>
+        <% j=0 %>
+          <% @productses.each do |products| %>
+            <% if($category_id == "{"+products.categoryid+"}" ) %>
+                  <li>
+                 
+                         <form method="POST" action="<%= url_for :controller=>:Categories,:action => :add_to_cart,:id=> products.productname %>">
+                 
+                                     <table>
+                                         <tr>
+                                           <td style="height:10px;width:100px">
+                                               <a href="<%= url_for  :controller=>:Categories,:action=>:productDetails,:id=> products.productid %>" style="color:#000000">
+                                               <font size="3"><span style="width:120px"><%= products.productname %></span></font>
+                                               </a>
+                                           </td>
+                                           <td>
+                                             <% if $products[$indexArray[j]]["productstatus"].to_i > 0 %>     
+                                             <td style="width:100px; height:5px;" >       
+                                              <font  size="1"> <input type="submit" style="width:100%;height:100%;background-color:#00008B" value="Add to Cart"/> </font>                       
+                                           </td>
+                                           <% else %>
+                                              <td>
+                                              <font color="red" size="2"><b><label for="add_to_cart">Out of stock</label></b></font>
+                                              </td>
+                                           <% end %>
+                                           
+                                         </tr>
+                                         
+                                         <tr>
+                                           <td style="height:7px">
+                                               <a href="<%= url_for :controller=>:Categories, :action => :productDetails, :id=>  products.productid %>"style="color:#000000">
+                                              <font size="2"> <span><%= "Price:&nbsp;&nbsp;"+products.productprice+".00" %></span></font>
+                                               </a>
+                                           </td>
+                                           
+                                              <% if $products[$indexArray[j]]["productstatus"].to_i  > 0 %> 
+                                           
+                                                <td style="height:7px;width:30px">
+                                                  <a href="<%= url_for  :controller=>:Categories, :action => :productDetails, :id=> products.productid%>"style="color:#000000">
+                                                   <font size="2"><label for="login" class="itemLabel" style="width:30px">   Quantity: </label></font>
+                                                </td>
+                                               <td style="height:7px;width:30px">
+                                               <input type="text" style="height:20px;width:40px" size="4" maxlength="3" border="1" id="quantity" name="quantity" />
+                                           </td>
+                                               <% end %>
+                                               </tr>
+                                             
+                                         
+                                      </table>
+                                           
+                         </form>
+                     </li>
+                 
+                <% j=j+1 %>
+             <% end %>
+        <% end %>
+    </ul>
+  </div>
+
+</div>
+
+

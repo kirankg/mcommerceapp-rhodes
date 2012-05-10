@@ -1,0 +1,54 @@
+Ê<div data-role="page">
+  <div class="pageTitle">
+    <h1> Previous Transactions</h1>
+  </div>
+
+<div class="toolbar">
+<% if ($flag == 0) %>
+  <div class="leftItem backButton">
+    <a class="cube"  href="<%= url_for :controller => :Settings, :action => :back_off_home %>" style = "color:#FAFAD2" ><font size="2" face="verdana" >Back</font></a>
+  </div>
+<% else %>
+  <div class="leftItem backButton">
+      <a class="cube"  href="<%= url_for :controller => :Categories, :action => :back_to_index %>" style = "color:#FAFAD2" ><font size="2" face="verdana" >Back</font></a>
+  </div>
+<% end %>
+</div>
+
+<div class="content">
+  <ul >
+    <table cellpadding="19" height="100%" width="100%">
+     
+      <tr style = "background-color:#F4A460">
+        <th> <font size="4">TransactionID</font></th>
+        <th><font size="4">Date</font></th>
+        <th><font size="4">Status</font></th>
+      </tr>   
+        <% (0.. ($transID1.length - 1)).each do |i|  %>
+          <tbody align="center">
+            <tr style = "background-color:#F5DEB3">
+              
+            <td >
+                <a class="dissolve" href="<%= url_for :action => :filetest1,:id => $transID1[i]["t_id"] %>" style = "color:#A52A2A" >
+                  <font size="3"><span style="width:25%"><b><%= $transID1[i]["t_id"] %></b></span></font>
+                </a> 
+              </td>
+              
+               <td> 
+                <a class="dissolve" href="<%= url_for :action => :filetest1,:id => $transID1[i]["t_id"] %>" style = "color:#A52A2A" >
+                  <font size="2"><span style="width:50%"><b><%= $transID1[i]['date'] %></b></span></font>
+                </a> 
+               </td>
+               
+               <td > 
+                 <a class="dissolve" href="<%= url_for :action => :filetest1,:id => $transID1[i]["t_id"] %>" style = "color:#A52A2A" >
+                    <font size="3"><span style="width:25%"><b><%= $transID1[i]['status'] %></b></span></font>
+                 </a>
+                </td>
+                
+        </tr >
+          </tbody>
+        <% end %>
+    </table>
+  </ul>  
+</div>

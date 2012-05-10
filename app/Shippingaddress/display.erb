@@ -1,0 +1,92 @@
+<div data-role="page" class="ipadBdy">
+  
+<style type="text/css">
+* {
+  margin:0;
+  padding:0;
+ 
+}
+.ipadBdy{
+  background:transparent url(/public/images/bg.png) repeat 0 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  color:#3d3e42;
+}
+  header,section,article,figure {
+    display:block;
+  }
+  header {
+    padding:26px 0 18px 0;
+  }
+  header figure {
+    width:270px;
+    margin:0 auto;
+  }
+  </style>
+
+  <div class="pageTitle">
+    <h1><font size="2">Shop-Pickup List</font></h1>
+  </div>
+
+   <div class="toolbar">
+      <div class="leftItem backButton">
+        <a class="slide" href="<%= url_for :action => :choice %>" style = "color:#FAFAD2"><font size="2" face="verdana" >Back</font></a>
+      </div>
+  </div>
+<% j = 0 %>
+
+    <div class="content">
+      <ul >
+    <% (0.. ($shoplist.length - 1)).each do |i|  %>
+      <li>
+      
+        <table  height="100%" width="100%" cellpadding="17">
+            <tbody align="center">
+    
+                <tr class="ipadBdy">
+                  
+                  <td >
+                  <% if( $shoplist[i]["name"] == "Big Bazar")%>
+                      <header>
+                          
+                          <figure>
+                          <img src="/public/images/bigbazaar.jpg"/>
+                          </figure>
+                     </header>
+                  <% elsif( $shoplist[i]["name"] == "Star Bazar")%>
+                     <header>
+                        
+                         <figure> 
+                         <img src="/public/images/starbazaar.jpg"/>
+                        </figure>
+                    </header>
+                  <% elsif( $shoplist[i]["name"] == "Girias")%>
+                     <header>
+                         
+                         <figure> 
+                         <img src="/public/images/girias.jpg"/>
+                        </figure>
+                    </header>
+                   <% end %>
+                  </td>
+               
+                   
+                   </tr>
+                 
+                   <tr class="ipadBdy">
+                   <td >
+                    <a href="<%= url_for :action=>:shopAddress,:id=> j %>" >
+                    <font  size="2"><b><label for="filetest"><u><i><b><font size="3.5">Address:</font></b> <%= $shoplist[i]["street"] +  $shoplist[i]["city"] %></i></u></label></b></font></a>
+                    </td>
+                    
+                  </tr >
+                  </tbody>
+           
+              </table>
+
+            </li>
+            <% j = j + 1 %>
+        <% end %>
+      </ul>  
+    </div>
+</div>

@@ -1,0 +1,44 @@
+{
+    "StoreDetails": [
+        {
+            "name": "Big Bazar",
+            "apartment": "MaruthiArcade",
+            "street": "52/3 Byatarayanpura",
+            "city": "Bengaluru",
+            "zipcode": "560094",
+            "phone": "08066470100"
+        },
+        {
+            "name": "Big Bazar",
+            "apartment": "Salarpuria Towers",
+            "street": "Marigowda road Adugodi",
+            "city": "Bengaluru",
+            "zipcode": "560095",
+            "phone": "08040927845"
+        },
+        {
+            "name": "Big Bazar",
+            "apartment": "Opposite Bengaluru Central",
+            "street": "45/1 Marenahali JP Nagar second Phase",
+            "city": "Bengaluru",
+            "zipcode": "560011",
+            "phone": "08042198360"
+        },
+        {
+            "name": "Star Bazar",
+            "apartment": "HM Vibha Tower",
+            "street": "Near Forum Mall",
+            "city": "Bengaluru",
+            "zipcode": "560029",
+            "phone": "08025535222"
+        },
+        {
+            "name": "Girias",
+            "apartment": "Near Brigade Tower",
+            "street": "137 Brigade Road",
+            "city": "Bengaluru",
+            "zipcode": "560025",
+            "phone": "08042915555"
+        }
+    ]
+}

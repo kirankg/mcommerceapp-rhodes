@@ -1,0 +1,25 @@
+#sdk: "/opt/resque/sdks/rhodes-3.3.2"
+sdkversion: 3.2.1
+name: mcommerceapp-rhodes
+version: 1.0
+vendor: rhomobile
+build: debug
+bbver: 4.6
+wmsdk: "Windows Mobile 6 Professional SDK (ARMV4I)"
+applog: rholog.txt
+iphone:
+  configuration: Release
+  sdk: iphonesimulator5.0
+  provisionprofile:
+  codesignidentity:
+  entitlements:
+  BundleIdentifier: com.rhomobile.mcommerceapp-rhodes
+  BundleURLScheme: mcommerceapp-rhodes
+wp:
+  productid: 'c81ddb00-7274-012f-1d68-12313900de37'
+symbian:
+  uid: '0xe37f17ff'
+android:
+  version: 2.1
+
+extensions: ["json", "another-extension"]

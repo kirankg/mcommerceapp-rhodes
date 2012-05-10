@@ -1,0 +1,93 @@
+<div data-role="page" class="ipadBdy">
+
+<style type="text/css">
+* {
+  margin:0;
+  padding:0;
+ 
+}
+.ipadBdy{
+  background:transparent url(/public/images/bg.png) repeat 0 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  color:#3d3e42;
+}
+</style>
+
+  <div class="pageTitle">
+  <h1>Payment Details</h1>
+  </div>
+    
+  <div class="toolbar">
+    <div class="leftItem backButton">
+      <a class="slide" href="<%= url_for :action => :back_paymentmode %>"style = "color:#FAFAD2"><font size="2" face="verdana">Back</font></a>
+    </div>
+  </div>
+
+  <div class="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @payment.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="payment[cardtype]" class="fieldLabel"><b>Cardtype</b></label>
+                   
+              <select name="payment[cardtype]" <%= placeholder("Cardtype") %>>
+              <font size="1"><option value="Visa">Visa</option></font>
+              <font size="1"><option value="AMEX">AMEX</option></font>
+              <font size="1"><option value="Master Card">Master Card</option></font>
+              
+              </select>
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="payment[cardnumber]" class="fieldLabel" style="width:80px"><b>Card Number</b><font color="red">*</font>&nbsp;&nbsp;</label>
+            <input type="text" maxlength="16" style="width:120px;height:30px" id="payment[cardnumber]" name="payment[cardnumber]" <%= placeholder("Cardnumber") %> />
+          </div>
+      
+          
+          <div data-role="fieldchain">
+                     <label for="payment[cardexpmonth]" class="fieldLabel"><b>Card Exp Month</b></label>
+                     <select name="payment[cardexpmonth]" <%= placeholder("Cardexpmonth") %>>
+                      <option selected><font size="1">Jan</font></option>
+                      <option value="02"><font size="1">Feb</font></option>
+                      <option value="03"><font size="1">Mar</font></option>
+                      <option value="04"><font size="1">Apr</font></option>
+                      <option value="05"><font size="1">May</font></option>
+                      <option value="06"><font size="1">Jun</font></option>
+                      <option value="07"><font size="1">Jul</font></option>
+                      <option value="08"><font size="1">Aug</font></option>
+                      <option value="09"><font size="1">Sep</font></option>
+                      <option value="10"><font size="1">Oct</font></option>
+                      <option value="11"><font size="1">Nov</font></option>
+                      <option value="12"><font size="1">Dec</font></option>
+                    </select>
+                </div>
+                <div data-role="fieldchain">
+                      <label for="payment[cardexpmonth]" class="fieldLabel"><b>Card Exp Year</b></label>                  
+                    <select name="payment[cardexpyear]" <%= placeholder("Cardexpyear") %>>
+                      <font size="1"><option selected>2012</option></font>
+                      <font size="1"><option value="2013">2013</option></font>
+                      <font size="1"><option value="2014">2014</option></font>
+                      <font size="1"><option value="2015">2015</option></font>
+                      <font size="1"><option value="2016">2016</option></font>
+                      <font size="1"><option value="2017">2017</option></font>
+                      <font size="1"><option value="2018">2018</option></font>
+                      <font size="1"><option value="2019">2019</option></font>
+                    </select>
+              
+          </div>
+        
+                        <table>
+                                               <tr>
+                                               <td style="width:280px;">
+                                            <input type="submit" style="width:280px;" value="Submit"/>
+                                            </td>
+                                            </tr>
+                                            </table>
+    </form>
+  </div>
+
+</div>
+
+

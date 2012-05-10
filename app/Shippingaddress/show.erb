@@ -1,0 +1,78 @@
+<div data-role="page" class="ipadBdy">        
+    
+<style type="text/css">
+* {
+  margin:0;
+  padding:0;
+ 
+}
+.ipadBdy{
+  background:transparent url(/public/images/bg.png) repeat 0 0;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  color:#3d3e42;
+}
+</style>
+
+<div class="pageTitle">
+  <h1><font size="2">Delivery Details</font></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a class="slide" href="<%= url_for :action => :edit, :id => @shippingaddress.object %>"style = "color:#FAFAD2"><font size="3" face="verdana" >Edit</font></a>
+  </div>
+  
+    <div class="rightItem blueButton">
+    <a class="slide" href="<%= url_for :action => :address, :id => @shippingaddress.object %>"style = "color:#FAFAD2"><font size="3" face="verdana" >Pay</font></a>
+      </div> 
+</div>
+
+
+<div class="content">
+    <ul>
+    <li class="ipadBdy">
+      <table width="100%" border="1" cellpadding="0">
+       <tr >
+           <td width="30%"><font size="3"><b>Name</b></font></td>
+            <td width="70%"><font size="3"><%= @shippingaddress.name %></font></td>
+         
+      </tr>
+      
+        <tr width="100%">
+            <td width="30%"><font size="3"><b>Apartment</b></font></td>
+            <td width="70%"><font size="3"><%= @shippingaddress.apartment %></font></td>
+                  
+        </tr>  
+                
+        <tr width="100%">
+                        <td width="30%"><font size="3"><b>Street</b></font></td>
+                        <td width="70%"><font size="3"><%= @shippingaddress.street %></font></td>
+                    
+        </tr> 
+            
+        <tr width="100%">
+                          <td width="30%"><font size="3"><b>City</b></font></td>
+                          <td width="70%"><font size="3"><%= @shippingaddress.city %></font></td>
+                     
+        </tr>
+              
+        <tr width="100%">
+                        <td width="30%"><font size="3"><b>Zipcode</b></font></td>
+                       <td width="70%"> <font size="3"><%= @shippingaddress.zipcode %></font></td>
+                
+            </tr>  
+            
+        <tr width="100%">
+                      <td width="30%"><font size="3"><b>Phone</b></font></td>
+                      <td width="70%"><font size="3"><%= @shippingaddress.phone %></font></td>
+             
+          </tr>
+            
+      </table>
+      </li>  
+  
+    </ul>
+  </div>
+
+</div>

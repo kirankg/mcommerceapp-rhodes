@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Edited by XMLSpy® -->
+<shopstore>
+<category> 
+	<title lang="en">Electronics</title>
+	<itemname>Sonay Bravia</itemname>
+	 <itemdetails>Sony Bravia LED TV</itemdetails>
+	<itemprice>63,000</itemprice>
+
+	<itemname>Philips Sound Blaster</itemname>
+	 <itemdetails>Philips sound blaster with Woofer</itemdetails>
+	<itemprice>3,000</itemprice>
+</category>
+
+<category> 
+	<title lang="en">Apparel and Jewellery</title>
+	<itemname>Dimond Ring</itemname>
+	 <itemdetails>25 Carat Hand cut Dimond Ring </itemdetails>
+	<itemprice>3,00,000</itemprice>
+</category>
+
+<category> 
+	<title lang="en">Baby</title>
+	<itemname>Baby Soap</itemname>
+	 <itemdetails>Baby soap - No more tears</itemdetails>
+	<itemprice>30</itemprice>
+</category>
+
+<category> 
+	<title lang="en">For the Home</title>
+	<itemname>Bed Spreads</itemname>
+	 <itemdetails>Khadi Bhandar Double bed spreads with pillow covers</itemdetails>
+	<itemprice>300</itemprice>
+</category>
+
+<category> 
+	<title lang="en">Furniture</title>
+	<itemname>Computer Table</itemname>
+	 <itemdetails>Small Foldable Computer table</itemdetails>
+	<itemprice>600</itemprice>
+</category>
+
+<category> 
+	<title lang="en">Health and Beauty</title>
+	<itemname>Crape bandage</itemname>
+	 <itemdetails>10m Crape bandage</itemdetails>
+	<itemprice>130</itemprice>
+</category>
+
+<category> 
+	<title lang="en">Outdoor Living</title>
+	<itemname>Trolly Bag</itemname>
+	 <itemdetails>VIP 4 Wheel Trolly Bag</itemdetails>
+	<itemprice>3,000</itemprice>
+</category>
+</shopstore>
+
+

@@ -1,0 +1,85 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @registration.firstname %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @registration.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">Firstname</td>
+        <td class="itemValue"><%= @registration.firstname%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Lastname</td>
+        <td class="itemValue"><%= @registration.lastname%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Emailid</td>
+        <td class="itemValue"><%= @registration.emailid%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Confirmemailid</td>
+        <td class="itemValue"><%= @registration.confirmemailid%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Companyname</td>
+        <td class="itemValue"><%= @registration.companyname%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Address1</td>
+        <td class="itemValue"><%= @registration.address1%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Address2</td>
+        <td class="itemValue"><%= @registration.address2%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Password</td>
+        <td class="itemValue"><%= @registration.password%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Confirmpassword</td>
+        <td class="itemValue"><%= @registration.confirmpassword%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">City</td>
+        <td class="itemValue"><%= @registration.city%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">State</td>
+        <td class="itemValue"><%= @registration.state%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Country</td>
+        <td class="itemValue"><%= @registration.country%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Zipcode</td>
+        <td class="itemValue"><%= @registration.zipcode%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Phonenumber</td>
+        <td class="itemValue"><%= @registration.phonenumber%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

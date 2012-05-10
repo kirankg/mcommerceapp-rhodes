@@ -1,0 +1,45 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @shippingaddress.name %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @shippingaddress.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">Name</td>
+        <td class="itemValue"><%= @shippingaddress.name%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Apartment</td>
+        <td class="itemValue"><%= @shippingaddress.apartment%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Street</td>
+        <td class="itemValue"><%= @shippingaddress.street%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">City</td>
+        <td class="itemValue"><%= @shippingaddress.city%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Zipcode</td>
+        <td class="itemValue"><%= @shippingaddress.zipcode%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Phone</td>
+        <td class="itemValue"><%= @shippingaddress.phone%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

@@ -1,0 +1,60 @@
+<div data-role="page">
+
+  <div class="pageTitle">
+  <h1>Shipping Address</h1>
+  </div>
+    
+  <div class="toolbar">
+    <div class="leftItem backButton">
+      <a class="slide" href="<%= url_for :controller => :Categories, :action => :viewCart %>" style = "color:#FAFAD2"><font size="2" face="verdana">Back</font></a>
+    </div>
+  </div>
+
+
+<div class="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @shippingaddress.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="shippingaddress[name]" class="fieldLabel"><b>Name</b><font color="red">*</font></label>
+            <input type="text" id="shippingaddress[name]" name="shippingaddress[name]" <%= placeholder("Name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="shippingaddress[apartment]" class="fieldLabel"><b>Apartment</b><font color="red">*</font></label>
+            <input type="text" id="shippingaddress[apartment]" name="shippingaddress[apartment]" <%= placeholder("Apartment") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="shippingaddress[street]" class="fieldLabel"><b>Street</b><font color="red">*</font></label>
+            <input type="text" id="shippingaddress[street]" name="shippingaddress[street]" <%= placeholder("Street") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="shippingaddress[city]" class="fieldLabel"><b>City</b><font color="red">*</font></label>
+            <input type="text" id="shippingaddress[city]" name="shippingaddress[city]" <%= placeholder("City") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="shippingaddress[zipcode]" class="fieldLabel"><b>Zipcode</b><font color="red">*</font></label>
+            <input type="text" maxlength="6" id="shippingaddress[zipcode]" name="shippingaddress[zipcode]" <%= placeholder("Zipcode") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="shippingaddress[phone]" class="fieldLabel"><b>Phone</b><font color="red">*</font></label>
+            <input type="text" maxlength="10" id="shippingaddress[phone]" name="shippingaddress[phone]" <%= placeholder("Phone") %> />
+          </div>
+      
+
+              <table>
+                                     <tr>
+                                     <td style="width:280px;">
+                                  <input type="submit" style="width:280px" value="Submit"/>
+                                  </td>
+                                  </tr>
+                                  </table>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,113 @@
+<div data-role="page" class="ipadBdy">
+
+    <style type="text/css">
+    * {
+      margin:0;
+      padding:0;
+     
+    }
+    .ipadBdy{
+      background:transparent url(/public/images/bg.png) repeat 0 0;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:11px;
+      color:#3d3e42;
+    }
+    </style>
+
+    <div class="pageTitle">
+    <h1><font size="3">Order Report</font></h1>
+    </div>
+  
+    <div class="toolbar">
+      <div class="rightItem blueButton">
+        <a href="<%= url_for :action => :back_home %>"style = "color:#FAFAD2"><font size="2" face="verdana" >Home</font></a>
+      </div>
+    </div>
+
+    <div class="content">
+  <center>
+  <div>
+    <b><font size="5">Shipping Address</font></b><br>
+  </div>
+  <table border="1">
+      <tr>
+        <td style="width:100px">      
+          <label class="fieldLabel"><font size="3">Name  :&nbsp;&nbsp;</font></label>
+        </td>
+        <td>
+          <b><label class="fieldLabel"><font size="3"><%= $addressvar["shippingaddress"]["firstname"] %></font></label></b>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="width:100px">      
+          <label  class="fieldLabel"><font size="3">Address  :&nbsp;&nbsp;</font></label>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td>
+                  <b><label  class="fieldLabel"><font size="3"><%= $addressvar["shippingaddress"]["address1"] %></font></label></b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <b><label  class="fieldLabel"><font size="3"><%= $addressvar["shippingaddress"]["address2"] %></font></label></b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <b><label  class="fieldLabel"><font size="3"><%= $addressvar["shippingaddress"]["city"] %></font></label></b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <b><label  class="fieldLabel"><font size="3"><%= $addressvar["shippingaddress"]["zip"] %></font></label></b>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="width:100px">
+          <label  class="fieldLabel"><font size="3">Phone No.  :&nbsp;&nbsp;</font></label>
+        </td>
+        <td>
+          <b><label  class="fieldLabel"><font size="3"><%= $addressvar["shippingaddress"]["phonenumber"] %></font></label></b>
+        </td>
+      </tr>
+    </table>
+  
+        
+    <br>
+    <br> 
+       
+        <div>
+            <b><font size="5">Order Information</font></b><br>
+        </div>
+        <table border="1">
+          <tr>
+              <th><font size="3">Product Name</font></th>
+              <th><font size="3">Quantity</font></th>
+              <th><font size="3">Amount</font></th> 
+          </tr>
+          <% (0.. ($offlinecart.length - 1)).each do |i| %>
+          <tr>
+            <td><font size="3"><%= $offlinecart[i] %></font></td>
+            <td><font size="3"><%= $offlineProductsCodeNameQuantity[$offlinecart[i]] %></font></td>  
+            <td><font size="3"><%= $totalprice[i].to_s+".00" %></font></td>
+          </tr>
+          <% end %>
+          </table>
+          <table>
+          <tr>
+            <td align="right">
+              <b><label  class="fieldLabel"><font size="3">Total Price  :&nbsp;&nbsp;</font></label></b>
+              <b><label  class="fieldLabel"><font size="3"><%= $finalprice.to_s+".00" %></font></label></b>
+            
+            </td>
+         </tr>
+        </table>
+</center>
+    </div>
+    
+</div>

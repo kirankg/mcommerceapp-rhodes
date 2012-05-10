@@ -1,0 +1,89 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @registration.firstname %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @registration.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">Firstname</div>
+            <div class="itemValue"><%= @registration.firstname %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Lastname</div>
+            <div class="itemValue"><%= @registration.lastname %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Emailid</div>
+            <div class="itemValue"><%= @registration.emailid %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Confirmemailid</div>
+            <div class="itemValue"><%= @registration.confirmemailid %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Companyname</div>
+            <div class="itemValue"><%= @registration.companyname %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Address1</div>
+            <div class="itemValue"><%= @registration.address1 %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Address2</div>
+            <div class="itemValue"><%= @registration.address2 %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Password</div>
+            <div class="itemValue"><%= @registration.password %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Confirmpassword</div>
+            <div class="itemValue"><%= @registration.confirmpassword %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">City</div>
+            <div class="itemValue"><%= @registration.city %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">State</div>
+            <div class="itemValue"><%= @registration.state %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Country</div>
+            <div class="itemValue"><%= @registration.country %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Zipcode</div>
+            <div class="itemValue"><%= @registration.zipcode %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Phonenumber</div>
+            <div class="itemValue"><%= @registration.phonenumber %></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>
